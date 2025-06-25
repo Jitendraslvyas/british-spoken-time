@@ -24,17 +24,25 @@ A simple Java 21-based command-line utility that converts digital 24-hour time i
 ```
 british-spoken-time/
 ├── pom.xml
+├── README.md
 ├── src/
-│   ├── main/
-│   │   └── java/com/example/britishtime/
-│   │       ├── BritishSpokenTimeApplication.java
-│   │       ├── BritishSpokenTimeService.java
-│   │       ├── TimePhraseStrategy.java
-│   │       ├── SpokenTimeFormatter.java
-│   │       ├── [Multiple Strategy Classes...]
-│   └── test/
-│       └── java/com/example/britishtime/
-│           └── BritishSpokenTimeServiceTest.java
+│ ├── main/
+│ │ └── java/com/andela/britishtime/
+│ │ ├── app/
+│ │ │ └── BritishSpokenTimeApplication.java # CLI entry point
+│ │ │
+│ │ ├── core/
+│ │ │ ├── BritishSpokenTimeService.java # Main service logic
+│ │ │ └── SpokenTimeFormatter.java # Strategy engine
+│ │ │
+│ │ └── strategy/ # All formatter strategies
+│ │ ├── TimePhraseStrategy.java
+│ │ ├── ExactHourStrategy.java
+│ │ ├── [Multiple Strategy Classes...]
+│ │
+│ └── test/
+│ └── java/com/andela/britishtime/core/
+│ └── BritishSpokenTimeServiceTest.java # Unit tests for spoken formatter
 ```
 
 ---
